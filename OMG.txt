@@ -1,0 +1,135 @@
+ SOFTWARE ENGINERRING      
+ ENGLISH 
+ NAME: ARIF HOSSAIN
+ ID: 201732120157    
+EMAIL: ARIF19282@QQ.COM
+
+
+                 PROJECT NAME: OH-MY-GENES
+                 SUBMIT DATE: 2019-03-27
+
+
+
+
+
+
+
+Introduction 
+1.1 Purpose                                                                                                                 
+ 1.2 Overview                                                                                                              
+ 1.3 User Characteristics                                                                                          
+ 1.4 Conventions                                                                                                       
+2 Functional Requirements                                                                                   
+ 2.1 Function 1: I/O format checking                                                                   
+2.2 Function 2: User Interface                                                                              
+3 Nonfunctional Requirements                                                                             
+3.1 response time                                                                                                      
+ 3.2 Aesthetic aspects                                                                                               
+ 3.3 Con?dentiality policy                                                                                       
+4 Constraints                                                                                                             
+4.1 Browser Compatibility 
+4.2 Space Complexity
+4.3 System Downtime
+4.4 System Downtime
+ 5 Change case
+ 6 Milestones                                                                                                           
+7. Appendices
+
+
+
+
+
+1. Introduction
+This document is intended to specify a set of requirements for the project OMG, which means “Oh My Genes”, a web application for identifying genes’ expression differential.
+1.1.Purpose
+Comparing two samples, it’s quite useful to anlyse the different performances between the same genes automatically and quickly.
+1.2.Overview
+a web application based on Flask framework for anlysing the difference between genes.
+1.3.User Characteristics
+The  biologists and some researchers or students in related area.
+1.4. Terminologies & Abbreviations Explanation
+This section is aimed to explain some terminologies and abbreviations, for the sake of better understanding of the content of the project.
+1.4.1. Terminologies
+?Control sample - A cell is prepared in its normal condition.
+?Treatment sample - some genes are alters and cell sample treated by special chemicals, 
+? In which Differentially expressed genes - The genes which have significantly different expression levels between two samples.
+1.4.2. Abbreviations
+Control sample - a cell sample prepared in its normal condition. Treatment sample - a cell sample treated by special chemicals,  or in which some genes are altered. Differentially expressed genes - the genes which have  significantly   different expression levels between two samples. Up-regulation - a gene is said to be up-regulated if it has higher expression in treatment than in control. LogFC - log fold change of gene expression. log_2 [T/C],  where T is the gene expression level from a treatment sample,   while C is the gene expression level from a control sample.
+
+
+
+2. Functional Requirements
+2.1 Function 1: I/O format checking
+A valid submitted gene expression file has the following format. It is a TAB-delimited, plain text file with three columns. The file contains an optional head line, followed by each gene’s expression in a control sample (e.g., ControlSample) and in a treatment sample (e.g., KnockOutSample).
+See the txt file pattern as following:
+gene_id	ControlSample	KnockOutSample
+AT1G01010	1.198558083	2.036161827
+AT1G01020	13.75736234	13.370796
+AT1G01030	0.833779536	0.203616183
+AT1G01040	9.58846466	7.126566394
+AT1G01046	0	0
+AT1G01050	23.81482799	21.10821094
+AT1G01060	0.625334652	1.221697096
+AT1G01070	1.719670292	0.950208853
+AT1G01080	28.34850421	25.24840665
+AT1G01090	58.26034505	42.96301455
+AT1G01100	1066.508249	1308.030358
+AT1G01110	2.709783491	1.425313279
+
+2.2.1. Table Analyzing
+The table contains a list of differentially expressed genes with the following format:
+gene_id	control_sample	knockout_sample	log_2[FC]
+AT1G01010	1.198558083	2.036161827	0.76
+
+2.2 Function 
+User Interface The web application has a simple interface with a single button [Upload and GO]. Scientists upload a plain text file containing gene expression levels from two samples, representing two experimental conditions. Accepting the file, the software will return a table of differentially expressed genes and a scatter plot of these genes whose X-axis is control and Y-axis is treatment.
+
+
+3. Non-functional Requirements
+For this section, we are going to clarify some non-functional requirements for a better using experience.
+3.1. Response Time
+In 5sec, we will give back the results.
+3.2 Aesthetic aspects
+I think that simple is the best way to doing this work.
+3.3 Confidentiality policy:
+ We will NEVER use the sorted results to seek any benefits. And it’s still ok to get the result without sign in. the web application must maintain the experiment data’s reliability, integration and secrecy and the experimental data will not be divulged without the agreement of the owner.
+4. Constraints
+For scientific and analyze uses, this application is orientated to various users(biologists) all over the world. Before developing the project, we have to take some main constraints into account so that we can come up any useful ideas to deal with them in the future.
+4.1. Browser Compatibility
+According to the market shares of all kinds of browser and the compatibility of Internet Explorer, we decide that this software is accessible through Chrome, Firefox and Safari.
+
+4.2. Space Complexity
+The application should not larger than 1 GB. For another aspect, when the application starts data analyzing, memory occupancy must be limited under a certain level to make sure the system work in a proper way.
+
+4.3. Budget
+ The most important is the Budget. The less funds we use, the better we hope. But less budget does not mean just complete what we want this software can do, that is to say we expect using the least funds to use the best technologyandrealizethemostfunctions.  At last, we ex p ectthatthe Budgetoughttobelimitedin 10,000USD.
+
+4.4. System Downtime
+. As we need use this software to help our research the whole year, and we wish that the software makes errors or shut down accidently much less, our team want the downtime of the system is less than 30 minutes per year
+
+5. Change Cases
+There are still some other expectations we possess as following: In order to improve the practicability of this system and accomplish our research better, we expect that this system can give a few potential functions. For example, this system can set a threshold for log_2[FC] by itself. Or we upload several data, it can give the response several scatter plot, which will improve workpiece ratio of us than just upload one data table once. Next, we expect this system can have a login judge system to prevent people from outside using this system, maybe what we mean is like a firewall. Besides, we hope this system can judge whether the file that we upload is valid and whether it has existed or related to our research. If it is invalid, we hope it will appear some hint to guide us upload the correct file. If it has existed, the system can give corresponding information. Afterwards, we hope this system can clean up memory regularly and data recovery function in case system cash. At the same time, we hope this system can recover and display the result last time when we biologists open it next time. And, we want this system can give other functions not only to identify differentially expressed genes give a gene expression file containing two cell samples, we want more cell samples and we want to test the expression levels of genes through scientific calculations. Last but not least, our biologists may come from all over the world, so we want this system can with its own complicated translation function. Then, we expect this system is in simple style, as we are doing research we do not need pretty beautiful interface just in simple and clear is OK. Besides, we want this system possess privacy and security. Because our research is very confidential and authoritative, the result is all biologist.	
+
+
+
+
+6. Milestones
+For submit this system, we have some requirements as following: 1. We want a SRS to get a rough idea this system by 1 March 2019. 
+2. We want to get SRS approved, much earlier much better, it is better before 25 march   2019.
+ 3. We expect to get design done by yourself to using Flask and learn what you need when you design this system from Internet. But it just can learn rather than copy, because we need a self-designed system which is relative safe than a copy system.
+ 4. We expect this system get coding done by Python in main, Java in assistant. Because Python and Java is the main programming language in current market, and Python is simpler to use than Java or C, the operation will also be simpler according to this.
+
+
+7. Appendices
+
+Date	Change Log
+March  26th	1.Specified basically functions and interface for the application.
+	2.Get non-functional requirements in detail.
+	3.Clarified some constrains about the application.
+	4.Imagined some change cases and tried to find ways to slove them.
+	5.Decided the project developing milestones.
+
+8. References
+1.SRS example pattern:
+http://oh-my-genes.readthedocs.io/projects/en/latest/
+ Previous
